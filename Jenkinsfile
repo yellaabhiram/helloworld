@@ -40,7 +40,7 @@ pipeline {
         }
 
         stage ('deploy') {
-            stapes{ 
+            steps{ 
                 script {
                     sh 'echo "ansibleAhoc-command"'
                 }
@@ -48,7 +48,9 @@ pipeline {
         }
     }
     post {
-        println "${env.BUILD_URL}"
+        always {
+            println "${env.BUILD_URL}"
+        }
     }
 }
 
