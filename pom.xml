@@ -6,7 +6,7 @@
 
   <groupId>com.coveros.demo</groupId>
   <artifactId>helloworld</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
   <packaging>jar</packaging>
 
   <name>Hello World</name>
@@ -21,7 +21,18 @@
 
     <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
   </properties>
-
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-1-133.us-east-2.compute.internal-releases</name>
+        <url>http://3.21.159.154:8081/artifactory/test</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-1-133.us-east-2.compute.internal-snapshots</name>
+        <url>http://3.21.159.154:8081/artifactory/test</url>
+    </snapshotRepository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
