@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 def server = Artifactory.server 'myjfrog'
+
 pipeline {
     agent any
     stages {
