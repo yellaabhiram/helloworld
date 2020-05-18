@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def server = Artifactory.server 'myjfrog'
+//def server = Artifactory.server 'myjfrog'
 
 pipeline {
     agent any
@@ -34,7 +34,19 @@ pipeline {
         stage ('publish') {
             steps {
                 script {
-                    server.upload(uploadSpec)
+
+                    rtUpload (
+                        serverId: 'myjfrog',
+                        spec: '''{
+                              "files": [
+                                {
+                                  "pattern": "target/*.jar",
+                                  "target": "helloworld/"
+                                }
+                             ]
+                        } '''
+                    )
+                    
                 }
             }
         }
