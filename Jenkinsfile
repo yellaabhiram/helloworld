@@ -33,5 +33,11 @@ pipeline {
                 }
             }
         }
+        
+        stage ("notify") {
+            steps {
+                emailext body: 'this is status of job "${BUILD_URL}"', subject: 'Job Status', to: 'tejesh2311@gmail.com'
+            }
+        }
     }
 }
