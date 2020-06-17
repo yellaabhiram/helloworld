@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     sh """ 
-                        git checkout master "${branch}" """
+                        git checkout "${branch}" """
                 }
             }
         }
