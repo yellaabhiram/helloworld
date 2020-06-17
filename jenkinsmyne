@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    
+    stages{
+        stage ("scm clone") {
+            steps{
+                git 'https://github.com/tejesh555/helloworld.git'
+            }
+
+        }
+    
+        stage ("package") {
+            steps {
+                sh " mvn clean install"
+            }
+        }
+        
+            }
+            
+        }
+          }      }   
+}
+
