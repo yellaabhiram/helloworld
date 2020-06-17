@@ -1,5 +1,5 @@
 pipeline {
-    agents any
+    agent any
     stages {
         stage ("git clone") {
             steps {
@@ -18,6 +18,7 @@ pipeline {
         stage ("CD") {
             steps {
                 script {
+                    sh ""
                     //sh "ansible-playbook -i {{inventory_name}} playbook"
                 }
             }
