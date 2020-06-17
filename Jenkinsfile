@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
     stages {
@@ -5,6 +6,15 @@ pipeline {
             steps {
                 git credentialsId: 'github', url: 'https://github.com/tejesh555/helloworld.git'
             }    
+        }
+
+        stage ("checkout") {
+            steps {
+                script {
+                    sh """ 
+                        git checkout master "${branch}" """
+                }
+            }
         }
 
         stage ("Build") {
